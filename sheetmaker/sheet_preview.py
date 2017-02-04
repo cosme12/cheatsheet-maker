@@ -1,9 +1,15 @@
 """Displays current html sheet.
 
+Todo:
+    * 
+    * 
+
 """
 
 class SheetPreview(object):
-	"""docstring for SheetPreview"""
+	"""The html viewer used to display current html state."""
+	
+
 	def __init__(self, arg):
-		super(SheetPreview, self).__init__()
-		self.arg = arg
+		"""Returns a previewer object"""
+		pass
