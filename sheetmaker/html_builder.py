@@ -61,7 +61,7 @@ class HtmlSheet(object):
 		</div>
 	</body>
 </html>""".format(self.title)
-		self.write_to_file(html)
+		self.update_html_file(html)
 
 
 	def set_style(self, color_number):
@@ -78,8 +78,8 @@ class HtmlSheet(object):
 		color_secundary = {1: "#fee5d3", #secundary color, lighter than main color
 						   2: "#cccccc",
 						  }
-		#css should use format() but can't make it work
-		css = """
+		#html should use .format() but can't make it work
+		html = """
 	body {
 		background: #dddfdd none repeat scroll 0 0;
 		color: #46473b;
@@ -167,7 +167,7 @@ class HtmlSheet(object):
 		margin-top: 16px;
 		margin-left: 10px;
 	}"""
-		self.write_to_file(css, "<!-- css -->")
+		self.update_html_file(html, "<!-- css -->")
 
 	
 	def build_header(self, author_name):
@@ -182,7 +182,7 @@ class HtmlSheet(object):
 				<table class="main_title"><tbody><tr><td>{0} CheatSheet</td></tr>
 					<tr><td>by {1} (DaveChild) via CheatSheet Maker</td></tr>
 				</tbody></table>""".format(self.title, self.author_name)
-		self.write_to_file(html, "<!-- header -->")
+		self.update_html_file(html, "<!-- header -->")
 
 
 	def build_footer(self, author_picture, author_web, sponsor_name, sponsor_web):
@@ -219,7 +219,7 @@ class HtmlSheet(object):
 						<tr><td>{5}</td></tr>
 					</tbody></table>
 				</div>""".format(self.author_picture, self.author_name, self.author_web, self.date, self.sponsor_name, self.sponsor_web)
-		self.write_to_file(html, "<!-- footer -->")	
+		self.update_html_file(html, "<!-- footer -->")	
 
 
 	def build_columns(self, columns_number):
@@ -242,7 +242,7 @@ class HtmlSheet(object):
 		else:
 			#error
 			pass						
-		self.write_to_file(html, "<!-- columns -->")
+		self.update_html_file(html, "<!-- columns -->")
 
 	
 	def build_rows_block(self, title, selected_column, rows_number, text):
@@ -277,10 +277,10 @@ class HtmlSheet(object):
                         </tbody>
                     </table>
 				</div>""".format(rows)
-		self.write_to_file(html, "<!-- column" + str(selected_column) + " -->")
+		self.update_html_file(html, "<!-- column" + str(selected_column) + " -->")
 
 	
-	def write_to_file(self, new_html, from_here=None):
+	def update_html_file(self, new_html, from_here=None):
 		"""Reads html file, appends new html and writes it to file
 
 		Args:
