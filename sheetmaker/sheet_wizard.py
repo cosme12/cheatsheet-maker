@@ -107,6 +107,7 @@ class SheetWizard(object):
 		color = int(self.input_handler(options))
 
 		self.NewSheet = HtmlSheet(title) #Creates a HtmlSheet object with title attrib
+		self.NewSheet.create_empty_sheet()
 		self.NewSheet.set_style(color)
 		self.NewSheet.build_columns(self.columns)
 		self.add_header()
