@@ -270,13 +270,13 @@ class HtmlSheet(object):
                                 </td>
                             </tr>""".format(text[i])
 		html = """<div class="block">
-					<h3 class="block_title">Rows</h3>
+					<h3 class="block_title">{0}</h3>
 					<table class="rows_table">
                         <tbody>
-                        	{0}
+                        	{1}
                         </tbody>
                     </table>
-				</div>""".format(rows)
+				</div>""".format(title, rows)
 		self.update_html_file(html, "<!-- column" + str(selected_column) + " -->")
 
 	
