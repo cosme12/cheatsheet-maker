@@ -145,13 +145,13 @@ class SheetWizard(object):
 	def add_block():
 		"""Displays block options selector"""
 		print(self.lang_strings["BLOCK_MESSAGE"])
-		options = { 1: "Create block with rows"
+		options = { 1: "Create block with rows",
 				    0: "Done"
 				   }
 		answer = int(self.input_handler(options))
 		if answer == 1:
 			self.block_rows()
-		elif answer == 0 || answer == ""
+		elif (answer == 0) | (answer == ""):
 			self.end()
 
 
@@ -161,7 +161,7 @@ class SheetWizard(object):
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
 		options = {}
 		for i in range(columns):
-    		options[i+1] = str(i+1) + ". main column"
+			options[i+1] = str(i+1) + " main column"
 		column_selected = self.input_handler(options)
 		options = { 1: "What is the title of the block?"
 				  }
