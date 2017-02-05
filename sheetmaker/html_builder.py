@@ -178,7 +178,7 @@ class HtmlSheet(object):
 
 		"""
 		self.author_name = author_name
-		html = """<img class="main_logo" src="logo.png">
+		html = """<a href="http://github.com/cosme12/cheatsheet-maker"<img class="main_logo" src="logo.png"></a>
 				<table class="main_title"><tbody><tr><td>{0} CheatSheet</td></tr>
 					<tr><td>by {1} via CheatSheet Maker</td></tr>
 				</tbody></table>""".format(self.title, self.author_name)
@@ -202,21 +202,21 @@ class HtmlSheet(object):
 					<img class="image_footer" src="{0}">
 					<table class="text_footer"><tbody>
 						<tr><td>By {1}</td></tr>
-						<tr><td>{2}</td></tr>
+						<tr><td><a href="{2}">{2}</a></td></tr>
 					</tbody></table>
 				</div>
 
 				<div class="block_footer_inner">
 					<table class="text_footer"><tbody>
 						<tr><td>Created {3}</td></tr>
-						<tr><td>www.github.com/cosme12/cheatsheet-maker</td></tr>
+						<tr><td><a href="http://github.com/cosme12/cheatsheet-maker">http://github.com/cosme12/cheatsheet-maker</a></td></tr>
 					</tbody></table>
 				</div>
 
 				<div class="block_footer_inner">
 					<table class="text_footer"><tbody>
 						<tr><td>Sponsored by {4}</td></tr>
-						<tr><td>{5}</td></tr>
+						<tr><td><a href="{5}">{5}</a></td></tr>
 					</tbody></table>
 				</div>""".format(self.author_picture, self.author_name, self.author_web, self.date, self.sponsor_name, self.sponsor_web)
 		self.update_html_file(html, "<!-- footer -->")	
