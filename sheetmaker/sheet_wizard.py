@@ -116,7 +116,7 @@ class SheetWizard(object):
 	def add_header(self):
 		"""Displays header options selector"""
 
-		print(self.lang_strings["HEADER_MESSAGE1"])
+		print(self.lang_strings["HEADER_MESSAGE"])
 		options = { 1: "What is the author name?"
 				  }
 		author_name = self.input_handler(options)
@@ -143,7 +143,7 @@ class SheetWizard(object):
 		self.add_block()
 	
 
-	def add_block():
+	def add_block(self):
 		"""Displays block options selector"""
 		print(self.lang_strings["BLOCK_MESSAGE"])
 		options = { 1: "Create block with rows",
@@ -156,12 +156,12 @@ class SheetWizard(object):
 			self.end()
 
 
-	def block_rows():
+	def block_rows(self):
 		"""Rows block options selector"""
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE1"])
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
 		options = {}
-		for i in range(columns):
+		for i in range(self.columns):
 			options[i+1] = str(i+1) + " main column"
 		column_selected = self.input_handler(options)
 		options = { 1: "What is the title of the block?"
@@ -169,7 +169,7 @@ class SheetWizard(object):
 		title = self.input_handler(options)
 		options = { 1: "How many rows does it have?"
 				  }
-		rows_number = self.input_handler(options)
+		rows_number = int(self.input_handler(options))
 		options = { 1: "What is the text of each row? (text row1. # text row2. # text row3)"
 				  }
 		text = self.input_handler(options)
@@ -193,7 +193,7 @@ class SheetWizard(object):
 		pass
 
 
-	def end():
+	def end(self):
 		"""Displays end message and close system"""
 		print(self.lang_strings["END_MESSAGE"])
 
