@@ -99,12 +99,22 @@ class SheetWizard(object):
 				    2: "2 main columns",
 				    3: "3 main columns"
 				  }
-		self.columns = int(self.input_handler(options))
+		columns = self.input_handler(options)
+		if (columns == "1") | (columns == "2") | (columns == "3"):
+			self.columns = int(columns)
+		else:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.config_sheet()
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE3"])
 		options = { 1: "Orange (RECOMMENDED)",
 				    2: "Black and white"
 				  }
-		color = int(self.input_handler(options))
+		color = self.input_handler(options)
+		if (color == "1") | (color == "2"):
+			color = int(color)
+		else:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.config_sheet()
 
 		self.NewSheet = HtmlSheet(title) #Creates a HtmlSheet object with title attrib
 		self.NewSheet.create_empty_sheet()
@@ -130,13 +140,13 @@ class SheetWizard(object):
 		options = { 1: "What is the author picture url?"
 				  }
 		author_picture = self.input_handler(options)
-		options = { 1: "What is the author website url?"
+		options = { 1: "What is the author website url? (use http://)"
 				  }
 		author_web = self.input_handler(options)
 		options = { 1: "What is the sponsor name?"
 				  }
 		sponsor_name = self.input_handler(options)
-		options = { 1: "What is the sponsor webite url?"
+		options = { 1: "What is the sponsor webite url? (use http://)"
 				  }
 		sponsor_web = self.input_handler(options)
 		self.NewSheet.build_footer(author_picture, author_web, sponsor_name, sponsor_web)
@@ -149,11 +159,14 @@ class SheetWizard(object):
 		options = { 1: "Create block with rows",
 				    0: "Done"
 				   }
-		answer = int(self.input_handler(options))
-		if answer == 1:
+		answer = self.input_handler(options)
+		if answer == "1":
 			self.block_rows()
-		elif (answer == 0) | (answer == ""):
+		elif answer == "0":
 			self.end()
+		else:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.add_block()
 
 
 	def block_rows(self):
@@ -162,14 +175,23 @@ class SheetWizard(object):
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
 		options = {}
 		for i in range(self.columns):
-			options[i+1] = str(i+1) + " main column"
+			options[i+1] = str(i+1) + " main column"		
 		column_selected = self.input_handler(options)
+		if (column_selected == "1") | (column_selected == "2") | (column_selected == "3"):
+			column_selected = int(column_selected)
+		else:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.block_rows()
 		options = { 1: "What is the title of the block?"
 				  }
 		title = self.input_handler(options)
 		options = { 1: "How many rows does it have?"
 				  }
-		rows_number = int(self.input_handler(options))
+		try:
+			rows_number = int(self.input_handler(options))
+		except:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.block_rows()
 		options = { 1: "What is the text of each row? (text row1. # text row2. # text row3)"
 				  }
 		text = self.input_handler(options)
