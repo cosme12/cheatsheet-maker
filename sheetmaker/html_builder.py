@@ -245,12 +245,12 @@ class HtmlSheet(object):
 		self.update_html_file(html, "<!-- columns -->")
 
 	
-	def build_rows_block(self, title, selected_column, rows_number, text):
+	def build_rows_block(self, selected_column, title, rows_number, text):
 		"""Creates a html rows block.
 
 		Args:
-			title (str): Block title.
 			selected_column (int): Column in which block will be created.
+			title (str): Block title.
 			rows_number (int): Numbers of rows to create.
 			text (list): Text for each row.
 
