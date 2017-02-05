@@ -91,7 +91,7 @@ class SheetWizard(object):
 		Method will ask for HtmlSheet attributes.
 		"""
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE1"])
-		options = { 1: "What is your sheet title?"
+		options = { 1: "What is your sheet title? ('CheatSheet' is added automaticaly)"
 				  }
 		title = self.input_handler(options)
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE2"])
