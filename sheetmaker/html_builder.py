@@ -178,7 +178,7 @@ class HtmlSheet(object):
 
 		"""
 		self.author_name = author_name
-		html = """<img class="main_logo" src="images/logo.png">
+		html = """<img class="main_logo" src="logo.png">
 				<table class="main_title"><tbody><tr><td>{0} CheatSheet</td></tr>
 					<tr><td>by {1} (DaveChild) via CheatSheet Maker</td></tr>
 				</tbody></table>""".format(self.title, self.author_name)
