@@ -107,7 +107,7 @@ class HtmlSheet(object):
 	}
 	.main_logo{
 		background-color: #000000;
-		border-top: 10px solid #fa6900;
+		border-top: 10px solid """ + color_main[self.color] + """;
 		padding: 10px 20px;
 		width: 50%;
 	}
