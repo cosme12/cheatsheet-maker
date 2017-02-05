@@ -126,7 +126,7 @@ class SheetWizard(object):
 
 	def add_footer(self):
 		"""Displays footer options selector"""
-		print(self.lang_strings["HEADER_MESSAGE"])
+		print(self.lang_strings["FOOTER_MESSAGE"])
 		options = { 1: "What is the author picture url?"
 				  }
 		author_picture = self.input_handler(options)
