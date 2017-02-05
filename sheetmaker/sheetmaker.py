@@ -11,9 +11,16 @@ the current results.
 
 
 import sys
+import constants
+from sheet_wizard import SheetWizard
+
 
 def main():
     """Main entry point for the script."""
+    new_wizard = SheetWizard(constants.VERSION)
+    new_wizard.menu_language()
+    new_wizard.intro()
+    new_wizard.main_menu()
     pass
 
 if __name__ == '__main__':
