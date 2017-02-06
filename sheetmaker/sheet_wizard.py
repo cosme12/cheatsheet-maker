@@ -156,11 +156,14 @@ class SheetWizard(object):
 	def add_block(self):
 		"""Displays block options selector"""
 		print(self.lang_strings["BLOCK_MESSAGE"])
-		options = { 1: "Create block with rows",
+		options = { 1: "Create text block",
+					2: "Create block with rows",
 				    0: "Done"
 				   }
 		answer = self.input_handler(options)
 		if answer == "1":
+			self.block_text()
+		elif answer == "2":
 			self.block_rows()
 		elif answer == "0":
 			self.end()
@@ -200,6 +203,29 @@ class SheetWizard(object):
 		self.add_block()
 
 
+	def block_text(self):
+		"""Text block options selector"""
+		print(self.lang_strings["TEXT_BLOCK_MESSAGE"])
+		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
+		options = {}
+		for i in range(self.columns):
+			options[i+1] = str(i+1) + " main column"		
+		column_selected = self.input_handler(options)
+		if (column_selected == "1") | (column_selected == "2") | (column_selected == "3"):
+			column_selected = int(column_selected)
+		else:
+			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+			self.block_text()
+		options = { 1: "What is the title of the block?"
+				  }
+		title = self.input_handler(options)
+		options = { 1: "What is the text for the block (use <br> for a new line)"
+				  }
+		text = self.input_handler(options)
+		self.NewSheet.build_text_block(column_selected, title, text)
+		self.add_block()
+
+	
 	def preview():
 		"""Displays preview message"""
 		pass

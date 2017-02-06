@@ -132,6 +132,10 @@ class HtmlSheet(object):
 	i {
 		vertical-align: sub
 	}
+	.block_text{
+		padding: 5px 10px;
+		background: """ + color_secundary[self.color] + """ none repeat scroll 0 0;
+	}
 	.rows_table {
 		background: white none repeat scroll 0 0;
 		border-collapse: collapse;
@@ -279,7 +283,23 @@ class HtmlSheet(object):
 				</div>""".format(title, rows)
 		self.update_html_file(html, "<!-- column" + str(selected_column) + " -->")
 
-	
+
+	def build_text_block(self, selected_column, title, text):
+		"""Creates a html text block.
+
+		Args:
+			selected_column (int): Column in which block will be created.
+			title (str): Block title.
+			text (list): Text for each row.
+
+		"""
+		html = """<div class="block">
+					<h3 class="block_title">{0}</h3>
+					<div class="block_text">{1}<div>
+				</div>""".format(title, text)
+		self.update_html_file(html, "<!-- column" + str(selected_column) + " -->")
+
+
 	def update_html_file(self, new_html, from_here=None):
 		"""Reads html file, appends new html and writes it to file
 

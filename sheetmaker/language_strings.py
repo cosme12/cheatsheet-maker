@@ -16,6 +16,7 @@ english = {
 	"BLOCK_MESSAGE" : "Building the blocks... answer the next questions.",
 	"BLOCK_ROWS_MESSAGE1" : "Building block with rows... answer the next questions.",
 	"BLOCK_ROWS_MESSAGE2" : "In what main column do you want to build it?",
+	"TEXT_BLOCK_MESSAGE" : "Building text block... answer the next questions.",
 	"END_MESSAGE" : "Thanks for using CheatSheet Maker. Feel free to share your ideas at http://github.com/cosme12/cheasheet-maker",
 	"INVALID_INPUT_MESSAGE" : "Invalid input. Try again.",
 }
