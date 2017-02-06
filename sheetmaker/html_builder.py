@@ -183,7 +183,7 @@ class HtmlSheet(object):
 		"""
 		self.author_name = author_name
 		html = """<a href="http://github.com/cosme12/cheatsheet-maker"><img class="main_logo" src="logo.png"></a>
-				<table class="main_title"><tbody><tr><td><h1 style="margin: 0px;">{0} CheatSheet<h1></td></tr>
+				<table class="main_title"><tbody><tr><td><h1 style="margin: 0px;">{0} CheatSheet</h1></td></tr>
 					<tr><td>by {1} via CheatSheet Maker</td></tr>
 				</tbody></table>""".format(self.title, self.author_name)
 		self.update_html_file(html, "<!-- header -->")
