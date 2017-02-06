@@ -9,6 +9,7 @@ from html_builder import HtmlSheet
 import language_strings
 
 
+
 class SheetWizard(object):
 	"""Creation Wizard for sheet maker.
 
@@ -98,6 +99,7 @@ class SheetWizard(object):
 
 		Method will ask for HtmlSheet attributes.
 		"""
+		print("##################################################################")
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE1"])
 		options = { 1: "What is your sheet title? ('CheatSheet' is added automaticaly)"
 				  }
@@ -133,7 +135,7 @@ class SheetWizard(object):
 
 	def add_header(self):
 		"""Displays header options selector"""
-
+		print("##################################################################")
 		print(self.lang_strings["HEADER_MESSAGE"])
 		options = { 1: "What is the author name?"
 				  }
@@ -144,6 +146,7 @@ class SheetWizard(object):
 
 	def add_footer(self):
 		"""Displays footer options selector"""
+		print("##################################################################")
 		print(self.lang_strings["FOOTER_MESSAGE"])
 		options = { 1: "What is the author picture url?"
 				  }
@@ -163,6 +166,7 @@ class SheetWizard(object):
 
 	def add_block(self):
 		"""Displays block options selector"""
+		print("##################################################################")
 		print(self.lang_strings["BLOCK_MESSAGE"])
 		options = { 1: "Create text block",
 					2: "Create block with rows",
@@ -182,6 +186,7 @@ class SheetWizard(object):
 
 	def block_rows(self):
 		"""Rows block options selector"""
+		print("##################################################################")
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE1"])
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
 		options = {}
@@ -213,6 +218,7 @@ class SheetWizard(object):
 
 	def block_text(self):
 		"""Text block options selector"""
+		print("##################################################################")
 		print(self.lang_strings["TEXT_BLOCK_MESSAGE"])
 		print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
 		options = {}
@@ -239,7 +245,7 @@ class SheetWizard(object):
 		pass
 
 
-	def export():
+	def export(self):
 		"""Displays export options selector"""
 		pass
 
