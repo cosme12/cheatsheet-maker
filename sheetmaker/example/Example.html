@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+	<head>
+		<title>Example</title>
+		<style>
+			
+	body {
+		background: #dddfdd none repeat scroll 0 0;
+		color: #46473b;
+		font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+		font-size: 80%;
+		line-height: 1.7;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}	
+	#content {
+		background: white none repeat scroll 0 0;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+		text-align: left;
+		width: 980px;
+	}	
+	#body_inner {
+		padding: 20px;
+	}
+	.main_title_block {
+		display: inline-flex;
+		margin-bottom: 4%;
+	}
+	.main_logo{
+		background-color: #000000;
+		border-top: 10px solid #ccc;
+		padding: 10px 20px;
+		//width: 50%;
+	}
+	.main_title {
+		padding-left: 4%;
+		width: 100%;
+	}
+	.block {
+		background: #000000 none repeat scroll 0 0;
+		border-bottom: 3px solid #000000;
+		border-radius: 3px;
+		margin-bottom: 12px;
+		padding-bottom: 0;
+	}
+	.block_title {
+		//color: #fee5d3;
+		color: #ffffff;
+		margin: 0;
+		padding: 6px 8px;
+		text-align: left;
+	}
+	i {
+		vertical-align: sub
+	}
+	.block_text{
+		padding: 5px 10px;
+		background: #cccccc none repeat scroll 0 0;
+	}
+	.rows_table {
+		background: white none repeat scroll 0 0;
+		border-collapse: collapse;
+		margin: 0;
+		padding: 0;
+		page-break-inside: avoid;
+		width: 100%;
+	}
+	.row_even td{
+		background: #cccccc none repeat scroll 0 0;
+		padding: 5px 10px;
+	}
+	.row_odd td {
+		padding: 5px 10px;
+	}
+	.block_footer {
+		margin-top: 10%;
+		border-top: solid 3px #ccc;
+		display: inline-flex;
+		width: 100%
+	}
+	.block_footer_inner {
+		display: inline-flex;
+		margin-bottom: 4%;
+		margin-left: 4%;
+	}
+	.image_footer {
+		width: 64px;
+		height: 64px;
+		margin-top: 10px;
+	}
+	.text_footer{
+		margin-top: 16px;
+		margin-left: 10px;
+	} <!-- css -->
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div id="body_inner">
+				<div class="main_title_block">
+					<a href="http://github.com/cosme12/cheatsheet-maker"><img class="main_logo" src="logo.png"></a>
+				<table class="main_title"><tbody><tr><td><h1 style="margin: 0px;">Example CheatSheet</h1></td></tr>
+					<tr><td>by Cosme12 via CheatSheet Maker</td></tr>
+				</tbody></table> <!-- header -->
+				</div>
+				<table cellspacing="0" cellpadding="0" width="100%">
+					<tbody><tr>
+						<td class="column_1" width="50%" valign="top"> <div class="block">
+					<h3 class="block_title">Introduction</h3>
+					<div class="block_text"><h2><b><u>Welcome to CHEATSHEET MAKER 1.0</u></b></h2><br>This simple application, made in Python 3, is used to create a simple Cheat Sheet or Quick Reference file. All you have to do is follow the Cheat Wizard instructions and answer the questions. After you are done, a html file is created with you Cheat Sheet.<br><b>CHEATSHEET MAKER</b> is really simple to use and is full open source. Use to summarize your collage classes or build easy instructions for your software.</div>
+				</div> <div class="block">
+					<h3 class="block_title">Installation</h3>
+					<table class="rows_table">
+                        <tbody>
+                        	<tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>1)</b> Download the files from Github.</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>2)</b> Run "sheetmaker/sheetmaker.py"</div>
+                                </td>
+                            </tr><tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>3)</b> Done.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div> <div class="block">
+					<h3 class="block_title">Tips & Tricks</h3>
+					<table class="rows_table">
+                        <tbody>
+                        	<tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>1)</b> You can use any html tag to add formating, like <b>Bold(<-b>)</b> and <u>Underscore(<-s>)</u> or <-h2><-h3>.</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>2)</b> Check your script folder. While using the interface a html file will be created. Open it and reload to have a live preview of your blocks.</div>
+                                </td>
+                            </tr><tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>3)</b> Open the html file with a text editor to correct any mistake you did (the html is pretty clean).</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>4)</b> Use the <img> tag to add an image to your CheatSheet.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div> <!-- column1 --> </td><td class="column_space" width="2%"></td>
+			<td class="column_2" width="50%" valign="top"> <div class="block">
+					<h3 class="block_title">Advantages</h3>
+					<table class="rows_table">
+                        <tbody>
+                        	<tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><u>Fast:</u> takes a few minutes to have a complete Sheet done.</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><u>Easy:</u> no extra knowlage required, just some creativity</div>
+                                </td>
+                            </tr><tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><u>Open Source:</u> help me improve it and add more functionality.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div> <div class="block">
+					<h3 class="block_title">Requirements</h3>
+					<table class="rows_table">
+                        <tbody>
+                        	<tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div>Python 3+</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div>No extra libraries requiered.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div> <div class="block">
+					<h3 class="block_title">About the author</h3>
+					<div class="block_text">I'm just a hobbiest programmer and this is my first "big" code. The idea for this project is to learn how to code in Python properly so it is really important that you give me some feedback (from how to write better docstring to how to organize the classes). Hope you can have some fun with this project as I am having while writting it :)</div>
+				</div> <div class="block">
+					<h3 class="block_title">Features comming soon!</h3>
+					<table class="rows_table">
+                        <tbody>
+                        	<tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>1)</b> Export to .PDF and .PNG</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>2)</b> Multi-language support.</div>
+                                </td>
+                            </tr><tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>3)</b> Cleaner text interface.</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>4)</b> Preview system.</div>
+                                </td>
+                            </tr><tr class="row_even">
+                                <td colspan="1" valign="top">
+                                    <div><b>5)</b> Undo command.</div>
+                                </td>
+                            </tr><tr class="row_odd">
+                                <td colspan="1" valign="top">
+                                    <div><b>6)</b> Any other idea you may have.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div> <!-- column2 --> </td> <!-- columns -->
+					</tr></tbody>
+				</table>
+				<div class="block_footer">
+					<div class="block_footer_inner">
+					<img class="image_footer" src="user.png">
+					<table class="text_footer"><tbody>
+						<tr><td>By Cosme12</td></tr>
+						<tr><td><a href="http://mywebsite.com">http://mywebsite.com</a></td></tr>
+					</tbody></table>
+				</div>
+
+				<div class="block_footer_inner">
+					<table class="text_footer"><tbody>
+						<tr><td>Created 3th February, 2017.</td></tr>
+						<tr><td><a href="http://github.com/cosme12/cheatsheet-maker">http://github.com/cosme12/cheatsheet-maker</a></td></tr>
+					</tbody></table>
+				</div>
+
+				<div class="block_footer_inner">
+					<table class="text_footer"><tbody>
+						<tr><td>Sponsored by Sponsor</td></tr>
+						<tr><td><a href="http://sponsor.com">http://sponsor.com</a></td></tr>
+					</tbody></table>
+				</div> <!-- footer -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
