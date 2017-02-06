@@ -68,14 +68,19 @@ class SheetWizard(object):
 
 	def intro(self):
 		"""Displays text intro to SheetWizard"""
-		print("{0} {1}".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
-
+		print("##################################################################")
+		print("#                                                                #")
+		print("#                                                                #")
+		print("#                 {0} {1}                #".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
+		print("#                                                                #")
+		print("#                                                                #")
+		print("##################################################################")
 
 	def main_menu(self):
 		"""Displays and handles all menu options"""
 		print(self.lang_strings["MENU_MESSAGE"])
 		options = { 1: "Create sheet",
-				    2: "Export (NOT CODED YET)"
+				    2: "Export (NOT CODED YET)",
 				    3: "Help (NOT CODED YET)",
 				  }
 		answer = self.input_handler(options)
