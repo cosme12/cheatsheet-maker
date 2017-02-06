@@ -8,6 +8,7 @@ Todo:
 from html_builder import HtmlSheet
 import language_strings
 
+
 class SheetWizard(object):
 	"""Creation Wizard for sheet maker.
 
@@ -26,6 +27,7 @@ class SheetWizard(object):
 		Attrib:
 			version (str): Script version.
 			lang_strings (dict): Contains all message strings.
+			self.title (str): Html file name.
 			self.columns (int): Number of main columns.
 			NewSheet (obj): HtmlSheet object instance.
 
@@ -93,7 +95,7 @@ class SheetWizard(object):
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE1"])
 		options = { 1: "What is your sheet title? ('CheatSheet' is added automaticaly)"
 				  }
-		title = self.input_handler(options)
+		self.title = self.input_handler(options)
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE2"])
 		options = { 1: "1 main column",
 				    2: "2 main columns",
@@ -116,7 +118,7 @@ class SheetWizard(object):
 			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
 			self.config_sheet()
 
-		self.NewSheet = HtmlSheet(title) #Creates a HtmlSheet object with title attrib
+		self.NewSheet = HtmlSheet(self.title) #Creates a HtmlSheet object with title attrib
 		self.NewSheet.create_empty_sheet()
 		self.NewSheet.set_style(color)
 		self.NewSheet.build_columns(self.columns)
