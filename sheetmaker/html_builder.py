@@ -107,9 +107,9 @@ class HtmlSheet(object):
 	}
 	.main_logo{
 		background-color: #000000;
-		border-top: 10px solid """ + color_main[self.color] + """;
+		border-top: 10px solid """ + color_secundary[self.color] + """;
 		padding: 10px 20px;
-		width: 50%;
+		//width: 50%;
 	}
 	.main_title {
 		padding-left: 4%;
@@ -183,7 +183,7 @@ class HtmlSheet(object):
 		"""
 		self.author_name = author_name
 		html = """<a href="http://github.com/cosme12/cheatsheet-maker"><img class="main_logo" src="logo.png"></a>
-				<table class="main_title"><tbody><tr><td>{0} CheatSheet</td></tr>
+				<table class="main_title"><tbody><tr><td><h1 style="margin: 0px;">{0} CheatSheet<h1></td></tr>
 					<tr><td>by {1} via CheatSheet Maker</td></tr>
 				</tbody></table>""".format(self.title, self.author_name)
 		self.update_html_file(html, "<!-- header -->")
@@ -290,12 +290,12 @@ class HtmlSheet(object):
 		Args:
 			selected_column (int): Column in which block will be created.
 			title (str): Block title.
-			text (list): Text for each row.
+			text (str): Text for block.
 
 		"""
 		html = """<div class="block">
 					<h3 class="block_title">{0}</h3>
-					<div class="block_text">{1}<div>
+					<div class="block_text">{1}</div>
 				</div>""".format(title, text)
 		self.update_html_file(html, "<!-- column" + str(selected_column) + " -->")
 
