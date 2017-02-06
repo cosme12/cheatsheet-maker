@@ -55,7 +55,7 @@ class SheetWizard(object):
 		"""Displays language selector"""
 		print("Choose your language:")
 		options = { 1: "English",
-				    2: "Español",
+				    2: "Español (NOT CODED YET)",
 				  }
 		answer = self.input_handler(options)
 		if answer == "1":
@@ -75,7 +75,8 @@ class SheetWizard(object):
 		"""Displays and handles all menu options"""
 		print(self.lang_strings["MENU_MESSAGE"])
 		options = { 1: "Create sheet",
-				    2: "Export",
+				    2: "Export (NOT CODED YET)"
+				    3: "Help (NOT CODED YET)",
 				  }
 		answer = self.input_handler(options)
 		if answer == "1":
@@ -108,7 +109,7 @@ class SheetWizard(object):
 			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
 			self.config_sheet()
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE3"])
-		options = { 1: "Orange (RECOMMENDED)",
+		options = { 1: "Orange",
 				    2: "Black and white"
 				  }
 		color = self.input_handler(options)
@@ -221,7 +222,7 @@ class SheetWizard(object):
 		options = { 1: "What is the title of the block?"
 				  }
 		title = self.input_handler(options)
-		options = { 1: "What is the text for the block (use <br> for a new line)"
+		options = { 1: "What is the text for the block (use <br> for new line or any html tag for formatting)"
 				  }
 		text = self.input_handler(options)
 		self.NewSheet.build_text_block(column_selected, title, text)
