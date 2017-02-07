@@ -83,12 +83,17 @@ class SheetWizard(object):
 		options = { 1: "Create sheet",
 				    2: "Export (NOT CODED YET)",
 				    3: "Help (NOT CODED YET)",
+				    4: "Exit",
 				  }
 		answer = self.input_handler(options)
 		if answer == "1":
 			self.config_sheet()
 		elif answer == "2":
 			self.export() #not coded yet
+		elif answer == "3":
+			self.help() #not coded yet
+		elif answer == "4":
+			self.end()
 		else:
 			print(self.lang_strings["INVALID_INPUT_MESSAGE"])
 			self.main_menu()
@@ -258,5 +263,6 @@ class SheetWizard(object):
 	def end(self):
 		"""Displays end message and close system"""
 		print(self.lang_strings["END_MESSAGE"])
+		input(self.lang_strings["EXIT_MESSAGE"])
 
 
