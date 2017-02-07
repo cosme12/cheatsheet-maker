@@ -101,7 +101,7 @@ class SheetWizard(object):
 		"""
 		print("##################################################################")
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE1"])
-		options = { 1: "What is your sheet title? ('CheatSheet' is added automaticaly)"
+		options = { 1: "What is your sheet title? ('CheatSheet' is added automatically)"
 				  }
 		self.title = self.input_handler(options)
 		print(self.lang_strings["CONFIG_SHEET_MESSAGE2"])
