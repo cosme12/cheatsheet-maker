@@ -21,7 +21,7 @@ def main():
     new_wizard.menu_language()
     new_wizard.intro()
     new_wizard.main_menu()
-    pass
+
 
 if __name__ == '__main__':
     sys.exit(main())
