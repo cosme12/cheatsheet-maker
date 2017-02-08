@@ -115,7 +115,7 @@ class SheetWizard(object):
                     3: "3 main columns"
                   }
         columns = self.input_handler(options)
-        if (columns == "1") | (columns == "2") | (columns == "3"):
+        if columns in ("1","2","3"):
             self.columns = int(columns)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
@@ -125,7 +125,7 @@ class SheetWizard(object):
                     2: "Black and white"
                   }
         color = self.input_handler(options)
-        if (color == "1") | (color == "2"):
+        if color in ("1", "2"):
             color = int(color)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
@@ -198,7 +198,7 @@ class SheetWizard(object):
         for i in range(self.columns):
             options[i+1] = str(i+1) + " main column"        
         column_selected = self.input_handler(options)
-        if (column_selected == "1") | (column_selected == "2") | (column_selected == "3"):
+        if column_selected in ("1","2","3"):
             column_selected = int(column_selected)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
@@ -209,7 +209,7 @@ class SheetWizard(object):
         options = { 1: "How many rows does it have?"
                   }
         try:
-            rows_number = int(self.input_handler(options))
+            rows_number = int(self.input_handler(options))  #Check if input is an int
         except:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             self.block_rows()
@@ -230,7 +230,7 @@ class SheetWizard(object):
         for i in range(self.columns):
             options[i+1] = str(i+1) + " main column"        
         column_selected = self.input_handler(options)
-        if (column_selected == "1") | (column_selected == "2") | (column_selected == "3"):
+        if column_selected in ("1", "2", "3"):
             column_selected = int(column_selected)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
