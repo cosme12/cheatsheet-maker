@@ -263,6 +263,7 @@ class SheetWizard(object):
 
     def end(self):
         """Displays end message and close system"""
+        print("##################################################################")
         print(self.lang_strings["END_MESSAGE"])
         input(self.lang_strings["EXIT_MESSAGE"])
 

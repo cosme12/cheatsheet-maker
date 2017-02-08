@@ -35,7 +35,6 @@ class HtmlSheet(object):
 
     def create_empty_sheet(self):
         """Create a basic html file and a files folder that will be used to make the sheet."""
-
         html = """<!DOCTYPE html>
 <html class="" lang="en">
     <head>
