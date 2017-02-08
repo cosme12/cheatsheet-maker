@@ -1,5 +1,5 @@
-$project
-========
+CheatSheet Maker
+================
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
 
@@ -10,30 +10,31 @@ Features
 --------
 
 - Html generator
-- Convert to pdf (WIP)
+- Export to pdf (WIP)
+- Previewer
 
 
 Examples
 --------
 
-Check ```github.com/$user/$project/sheetmaker/example/``` for an example of what you can do with CheatSheet Maker.
+Check ```github.com/cosme12/cheatsheet-maker/sheetmaker/example/``` for an example of what you can do with CheatSheet Maker.
 
-(insert image exmaple)
+![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
 
 Installation
 ------------
 
-Install $project by running:
+No installation is required. Just run
 
-    ```pip install "whatever is necesary"```
+```cheatsheet-maker/sheetmaker/sheetmaker.py```
 
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/$user/$project/issues
-- Source Code: github.com/$user/$project
+- Issue Tracker: github.com/cosme12/cheatsheet-maker/issues
+- Source Code: github.com/cosme12/cheatsheet-maker
 
 
 Support
