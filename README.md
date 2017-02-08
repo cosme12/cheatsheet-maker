@@ -25,10 +25,7 @@ Check ```github.com/cosme12/cheatsheet-maker/sheetmaker/example/``` for an examp
 Installation
 ------------
 
-No installation is required. Just run
-
-```cheatsheet-maker/sheetmaker/sheetmaker.py
-```
+No installation is required. Just run ```sheetmaker.py```
 
 
 Contribute
