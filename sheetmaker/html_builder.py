@@ -10,11 +10,12 @@ class HtmlSheet(object):
     """The html sheet to be created and customized."""
 
 
-    def __init__(self, title):
+    def __init__(self, title, date):
         """Return a new HtmlSheet object.
 
         Args:
             title (str): Html title and file name.
+            date (str): Today's date.
             
 
         Attrib:
@@ -29,7 +30,7 @@ class HtmlSheet(object):
 
         """
         self.title = title
-        self.date = "3th February, 2017."
+        self.date = date
     
 
     def create_empty_sheet(self):
@@ -78,9 +79,8 @@ class HtmlSheet(object):
         color_secundary = {1: "#fee5d3", #secundary color, lighter than main color
                            2: "#cccccc",
                           }
-        #html should use .format() but can't make it work
         html = """
-    body {
+    body {{
         background: #dddfdd none repeat scroll 0 0;
         color: #46473b;
         font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
@@ -89,88 +89,88 @@ class HtmlSheet(object):
         margin: 0;
         padding: 0;
         text-align: center;
-    }   
-    #content {
+    }}   
+    #content {{
         background: white none repeat scroll 0 0;
         margin: 0 auto;
         padding: 0;
         position: relative;
         text-align: left;
         width: 980px;
-    }   
-    #body_inner {
+    }}   
+    #body_inner {{
         padding: 20px;
-    }
-    .main_title_block {
+    }}
+    .main_title_block {{
         display: inline-flex;
         margin-bottom: 4%;
-    }
-    .main_logo{
+    }}
+    .main_logo{{
         background-color: #000000;
-        border-top: 10px solid """ + color_secundary[self.color] + """;
+        border-top: 10px solid {1};
         padding: 10px 20px;
         //width: 50%;
-    }
-    .main_title {
+    }}
+    .main_title {{
         padding-left: 4%;
         width: 100%;
-    }
-    .block {
-        background: """ + color_main[self.color] + """ none repeat scroll 0 0;
-        border-bottom: 3px solid """ + color_main[self.color] + """;
+    }}
+    .block {{
+        background: {0} none repeat scroll 0 0;
+        border-bottom: 3px solid {0};
         border-radius: 3px;
         margin-bottom: 12px;
         padding-bottom: 0;
-    }
-    .block_title {
+    }}
+    .block_title {{
         //color: #fee5d3;
         color: #ffffff;
         margin: 0;
         padding: 6px 8px;
         text-align: left;
-    }
-    i {
+    }}
+    i {{
         vertical-align: sub
-    }
-    .block_text{
+    }}
+    .block_text{{
         padding: 5px 10px;
-        background: """ + color_secundary[self.color] + """ none repeat scroll 0 0;
-    }
-    .rows_table {
+        background: {1} none repeat scroll 0 0;
+    }}
+    .rows_table {{
         background: white none repeat scroll 0 0;
         border-collapse: collapse;
         margin: 0;
         padding: 0;
         page-break-inside: avoid;
         width: 100%;
-    }
-    .row_even td{
-        background: """ + color_secundary[self.color] + """ none repeat scroll 0 0;
+    }}
+    .row_even td{{
+        background: {1} none repeat scroll 0 0;
         padding: 5px 10px;
-    }
-    .row_odd td {
+    }}
+    .row_odd td {{
         padding: 5px 10px;
-    }
-    .block_footer {
+    }}
+    .block_footer {{
         margin-top: 10%;
         border-top: solid 3px #ccc;
         display: inline-flex;
         width: 100%
-    }
-    .block_footer_inner {
+    }}
+    .block_footer_inner {{
         display: inline-flex;
         margin-bottom: 4%;
         margin-left: 4%;
-    }
-    .image_footer {
+    }}
+    .image_footer {{
         width: 64px;
         height: 64px;
         margin-top: 10px;
-    }
-    .text_footer{
+    }}
+    .text_footer{{
         margin-top: 16px;
         margin-left: 10px;
-    }"""
+    }}""".format(color_main[self.color], color_secundary[self.color])        
         self.update_html_file(html, "<!-- css -->")
 
     
