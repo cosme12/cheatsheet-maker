@@ -27,7 +27,8 @@ Installation
 
 No installation is required. Just run
 
-```cheatsheet-maker/sheetmaker/sheetmaker.py```
+```cheatsheet-maker/sheetmaker/sheetmaker.py
+```
 
 
 Contribute
