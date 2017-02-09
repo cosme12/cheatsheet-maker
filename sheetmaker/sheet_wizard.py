@@ -65,7 +65,7 @@ class SheetWizard(object):
         elif answer == "2":
             self.lang_strings = language_strings.espanol
         else:
-            self.menu_language()
+            return(self.menu_language())
 
 
     def intro(self):
@@ -97,7 +97,7 @@ class SheetWizard(object):
             self.end()
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.main_menu()
+            return(self.main_menu())
 
 
     def config_sheet(self):
@@ -130,7 +130,7 @@ class SheetWizard(object):
             color = int(color)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.config_sheet()
+            return(self.config_sheet())
 
         self.NewSheet = HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
         self.NewSheet.create_empty_sheet()
@@ -187,7 +187,7 @@ class SheetWizard(object):
             self.end()
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.add_block()
+            return(self.add_block())
 
 
     def block_rows(self):
@@ -203,7 +203,7 @@ class SheetWizard(object):
             column_selected = int(column_selected)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.block_rows()
+            return(self.block_rows())
         options = { 1: "What is the title of the block?"
                   }
         title = self.input_handler(options)
@@ -213,7 +213,7 @@ class SheetWizard(object):
             rows_number = int(self.input_handler(options))  #Check if input is an int
         except:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.block_rows()
+            return(self.block_rows())
         options = { 1: "What is the text of each row? (text row1. # text row2. # text row3)"
                   }
         text = self.input_handler(options)
