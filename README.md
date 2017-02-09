@@ -17,7 +17,9 @@ Features
 Examples
 --------
 
-Check ```github.com/cosme12/cheatsheet-maker/sheetmaker/example/``` for an example of what you can do with CheatSheet Maker.
+Check [/sheetmaker/example](/sheetmaker/example) for an example of what you can do with CheatSheet Maker.
+
+relative
 
 ![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
@@ -25,14 +27,14 @@ Check ```github.com/cosme12/cheatsheet-maker/sheetmaker/example/``` for an examp
 Installation
 ------------
 
-No installation is required. Just run ```sheetmaker.py```
+No installation is required. Just run `sheetmaker.py`
 
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/cosme12/cheatsheet-maker/issues
-- Source Code: github.com/cosme12/cheatsheet-maker
+- [Issue Tracker](https://github.com/cosme12/cheatsheet-maker/issues)
+- [Source Code](https://github.com/cosme12/cheatsheet-maker)
 
 
 Support
