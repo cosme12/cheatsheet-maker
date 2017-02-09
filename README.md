@@ -17,7 +17,7 @@ Features
 Examples
 --------
 
-Check ```github.com/cosme12/cheatsheet-maker/sheetmaker/example/``` for an example of what you can do with CheatSheet Maker.
+Check ```https://github.com/cosme12/cheatsheet-maker/tree/master/sheetmaker/example``` for an example of what you can do with CheatSheet Maker.
 
 ![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
