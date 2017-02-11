@@ -3,7 +3,7 @@ CheatSheet Maker
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
 
-Work in progress. Just learning how to code, don't expect much from this project. Help is always welcomed.
+Work in progress. Just learning how to code properly in Python, and how to deal with a project . Help is always welcomed.
 
 
 Features
@@ -19,7 +19,6 @@ Examples
 
 Check [/sheetmaker/example](/sheetmaker/example) for an example of what you can do with CheatSheet Maker.
 
-relative
 
 ![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
@@ -27,8 +26,8 @@ relative
 Installation
 ------------
 
-No installation is required. Just run `sheetmaker.py`
-You can download a Windows .exe file here: [Source Code](https://github.com/cosme12/cheatsheet-maker/releases)
+- No installation is required. Just run `sheetmaker.py`
+- You can download the last Windows .exe file here: [Windows release](https://github.com/cosme12/cheatsheet-maker/releases)
 
 
 Contribute
