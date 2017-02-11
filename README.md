@@ -11,7 +11,7 @@ Features
 
 - Html generator
 - Export to pdf (WIP)
-- Previewer
+- Previewer (WIP)
 
 
 Examples
@@ -28,6 +28,7 @@ Installation
 ------------
 
 No installation is required. Just run `sheetmaker.py`
+You can download a Windows .exe file here: [Source Code](https://github.com/cosme12/cheatsheet-maker/releases)
 
 
 Contribute
