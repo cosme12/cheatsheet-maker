@@ -217,6 +217,9 @@ class SheetWizard(object):
         options = { 1: self.lang_strings["BLOCK_ROWS_OPTIONS3"][1],
                   }
         text = self.input_handler(options)
+        if text.count("#") < rows_number - 1: #Deny lower rows text divisor
+            print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+            return(self.block_rows())
         text = text.split("#")
         self.NewSheet.build_rows_block(column_selected, title, rows_number, text)
         self.add_block()
