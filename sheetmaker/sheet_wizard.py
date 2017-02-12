@@ -2,7 +2,7 @@
 
 Todo:
     * Add color text in command line
-    * Add translation to options
+    * 
 """
 
 import datetime
@@ -57,7 +57,7 @@ class SheetWizard(object):
         """Displays language selector"""
         print("Choose your language:")
         options = { 1: "English",
-                    2: "Español (NOT CODED YET)",
+                    2: "Español",
                   }
         answer = self.input_handler(options)
         if answer == "1":
