@@ -124,9 +124,13 @@ class SheetWizard(object):
         print(self.lang_strings["CONFIG_SHEET_MESSAGE3"])
         options = { 1: self.lang_strings["CONFIG_SHEET_OPTIONS3"][1],
                     2: self.lang_strings["CONFIG_SHEET_OPTIONS3"][2],
+                    3: self.lang_strings["CONFIG_SHEET_OPTIONS3"][3],
+                    4: self.lang_strings["CONFIG_SHEET_OPTIONS3"][4],
+                    5: self.lang_strings["CONFIG_SHEET_OPTIONS3"][5],
+                    6: self.lang_strings["CONFIG_SHEET_OPTIONS3"][6],
                   }
         color = self.input_handler(options)
-        if color in ("1", "2"):
+        if color in ("1", "2", "3", "4", "5", "6"):
             color = int(color)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])

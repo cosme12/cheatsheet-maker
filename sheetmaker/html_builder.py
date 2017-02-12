@@ -72,11 +72,19 @@ class HtmlSheet(object):
 
         """
         self.color = color_number
-        color_main = {1: "#fa6900", #main color
-                      2: "#000000",
+        color_main = {1: "#fa6900", #main color - orange
+                      2: "#000000", #black
+                      3: "#b60205", #red
+                      4: "#fbca04", #yellow
+                      5: "#0e8a16", #green
+                      6: "#1d76db", #blue
                      }
         color_secundary = {1: "#fee5d3", #secundary color, lighter than main color
                            2: "#cccccc",
+                           3: "#e99695",
+                           4: "#fef2c0",
+                           5: "#c2e0c6",
+                           6: "#bfd4f2",
                           }
         html = """
     body {{

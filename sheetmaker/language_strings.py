@@ -23,7 +23,11 @@ english = {
                                 3: "3 main columns"
                             },
     "CONFIG_SHEET_OPTIONS3" : { 1: "Orange",
-                                2: "Black and white"
+                                2: "Black and white",
+                                3: "Red",
+                                4: "Yellow",
+                                5: "Green",
+                                6: "Blue",
                             },
     "HEADER_MESSAGE" : "Building the header... answer the next questions.",
     "HEADER_OPTIONS" : { 1: "What is the author name?"
@@ -79,7 +83,11 @@ espanol = {
                                 3: "3 columnas principales"
                             },
     "CONFIG_SHEET_OPTIONS3" : { 1: "Naranja",
-                                2: "Negro y Blanco"
+                                2: "Negro y Blanco",
+                                3: "Rojo",
+                                4: "Amarillo",
+                                5: "Verde",
+                                6: "Azul",
                             },
     "HEADER_MESSAGE" : "Cosntruyendo el encabezado... contesta las siguientes preguntas.",
     "HEADER_OPTIONS" : { 1: "Cual es el nombre del autor?"
