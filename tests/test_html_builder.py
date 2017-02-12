@@ -2,9 +2,13 @@ import os
 import sys
 import unittest
 
-sys.path.insert(0, os.path.abspath('..'))
-from sheetmaker import html_builder
-from data import test_html_constants
+try:
+    sys.path.insert(0, os.path.abspath('..'))
+    from sheetmaker import html_builder
+    from data import test_html_constants
+except:
+    import html_builder
+    from tests.data import test_html_constants
 
 
 class HtmlBuilderTestCase(unittest.TestCase):

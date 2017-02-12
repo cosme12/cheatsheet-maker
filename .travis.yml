@@ -7,4 +7,4 @@ cache: pip
 install:
   - pip install -r requirements.txt
 script:
-  - python test_html_builder.py -v
+  - python tests/test_html_builder.py -v
