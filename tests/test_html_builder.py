@@ -1,17 +1,13 @@
 import os
 import sys
-print(sys.path)
 import unittest
 
 try:
-    #sys.path.insert(0, os.path.abspath('..'))
-    print(sys.path)
+    sys.path.insert(0, os.path.abspath('..')) #Works for local
     from sheetmaker import html_builder
     from data import test_html_constants
 except:
-    sys.path.insert(0, os.path.abspath('.'))
-    print(sys.path)
-    from sheetmaker import html_builder
+    from sheetmaker import html_builder  #Works for Travis CI
     from data import test_html_constants
 
 
