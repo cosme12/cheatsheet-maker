@@ -7,7 +7,8 @@ try:
     from sheetmaker import html_builder
     from data import test_html_constants
 except:
-    from sheetmaker import html_builder  #Works for Travis CI
+    sys.path.insert(0, os.path.abspath('.'))  #Works for Travis CI
+    from sheetmaker import html_builder
     from data import test_html_constants
 
 
