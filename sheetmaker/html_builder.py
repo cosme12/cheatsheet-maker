@@ -6,13 +6,21 @@ Todo:
     * 
 """
 
-import constants
+#Fix PATH tests and main program
+try: #Path when running tests
+    import sys
+    import os
+    sys.path.insert(0, os.path.abspath('..'))
+    from sheetmaker import constants
+except: #Path when running sheetmaker.py
+    import constants
+
 
 class HtmlSheet(object):
     """The html sheet to be created and customized."""
 
 
-    def __init__(self, title, date):
+    def __init__(self, title, date, author_name=None):
         """Return a new HtmlSheet object.
 
         Args:
@@ -25,6 +33,7 @@ class HtmlSheet(object):
             date (str): Creation date displayed in footer.
             color (int): Color code style.
             main_columns (int): Number of columns for sheet structure.
+            author_name (str): Name of the author
             author_picture (str): Url path to picture, displayed in footer.
             author_web (str): Url displayed in footer.
             sponsor_name (str): Name displayed in footer.
@@ -33,6 +42,7 @@ class HtmlSheet(object):
         """
         self.title = title
         self.date = date
+        self.author_name = author_name
     
 
     def create_empty_sheet(self):
@@ -166,16 +176,3 @@ class HtmlSheet(object):
         with open(self.title + ".html", 'w') as sheet:
             sheet.write(html)
 
-
-"""TEST CODE
-new = HtmlSheet("prueba")
-new.create_empty_sheet()
-new.set_style(1)
-new.build_header("Cosme12")
-new.build_footer("images/dave.jpg", "www.mywebsite.com", "Sponsor Name", "www.sponsor.com")
-new.build_columns(3)
-text = ["Blocks are organised into columns by you.",
-        "PDFs organise blocks into columns automatically.",
-        "Try to keep the columns roughly even in length - it makes the cheat sheets easier to use online."]
-new.build_rows_block("Block title", 1, 3, text)
-"""
