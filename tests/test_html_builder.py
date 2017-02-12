@@ -3,11 +3,12 @@ import sys
 import unittest
 
 try:
-    #sys.path.insert(0, os.path.abspath('..'))
-    from sheetmaker import html_builder
+    sys.path.insert(0, os.path.abspath('..'))
+    #from sheetmaker import html_builder
+    from sheetmaker.html_builder import *
     from data import test_html_constants
 except:
-    import html_builder
+    from sheetmaker.html_builder import *
     from tests.data import test_html_constants
 
 
