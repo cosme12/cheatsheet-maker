@@ -1,5 +1,6 @@
 CheatSheet Maker
 ================
+[![Build Status](https://travis-ci.org/cosme12/cheatsheet-maker.svg?branch=master)](https://travis-ci.org/cosme12/cheatsheet-maker)
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
 
