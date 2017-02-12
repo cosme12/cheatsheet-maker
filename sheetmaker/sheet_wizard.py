@@ -73,7 +73,7 @@ class SheetWizard(object):
         print("##################################################################")
         print("#                                                                #")
         print("#                                                                #")
-        print("#                 {0} {1}                #".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
+        print("#                 {0} {1}              #".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
         print("#                                                                #")
         print("#                                                                #")
         print("##################################################################")
@@ -137,9 +137,12 @@ class SheetWizard(object):
             return(self.config_sheet())
 
         self.NewSheet = html_builder.HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
-        self.NewSheet.create_empty_sheet()
-        self.NewSheet.set_style(color)
-        self.NewSheet.build_columns(self.columns)
+        new_html = self.NewSheet.create_empty_sheet()
+        self.NewSheet.update_html_file(new_html)
+        new_html = self.NewSheet.set_style(color)
+        self.NewSheet.update_html_file(new_html)
+        new_html = self.NewSheet.build_columns(self.columns)
+        self.NewSheet.update_html_file(new_html)
         self.add_header()
 
 
@@ -150,7 +153,8 @@ class SheetWizard(object):
         options = { 1: self.lang_strings["HEADER_OPTIONS"][1],
                   }
         author_name = self.input_handler(options)
-        self.NewSheet.build_header(author_name)
+        new_html = self.NewSheet.build_header(author_name)
+        self.NewSheet.update_html_file(new_html)
         self.add_footer()
 
 
@@ -170,7 +174,8 @@ class SheetWizard(object):
         options = { 1: self.lang_strings["FOOTER_OPTIONS4"][1],
                   }
         sponsor_web = self.input_handler(options)
-        self.NewSheet.build_footer(author_picture, author_web, sponsor_name, sponsor_web)
+        new_html = self.NewSheet.build_footer(author_picture, author_web, sponsor_name, sponsor_web)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
     
 
@@ -225,7 +230,8 @@ class SheetWizard(object):
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             return(self.block_rows())
         text = text.split("#")
-        self.NewSheet.build_rows_block(column_selected, title, rows_number, text)
+        new_html = self.NewSheet.build_rows_block(column_selected, title, rows_number, text)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
 
 
@@ -249,7 +255,8 @@ class SheetWizard(object):
         options = { 1: self.lang_strings["TEXT_BLOCK_OPTIONS2"][1],
                   }
         text = self.input_handler(options)
-        self.NewSheet.build_text_block(column_selected, title, text)
+        new_html = self.NewSheet.build_text_block(column_selected, title, text)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
 
     
