@@ -6,7 +6,7 @@ Todo:
 """
 
 import datetime
-from html_builder import HtmlSheet
+import html_builder
 import language_strings
 
 
@@ -136,7 +136,7 @@ class SheetWizard(object):
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             return(self.config_sheet())
 
-        self.NewSheet = HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
+        self.NewSheet = html_builder.HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
         self.NewSheet.create_empty_sheet()
         self.NewSheet.set_style(color)
         self.NewSheet.build_columns(self.columns)

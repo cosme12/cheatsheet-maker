@@ -12,12 +12,12 @@ the current results.
 
 import sys
 import constants
-from sheet_wizard import SheetWizard
+import sheet_wizard
 
 
 def main():
     """Main entry point for the script."""
-    new_wizard = SheetWizard(constants.VERSION)
+    new_wizard = sheet_wizard.SheetWizard(constants.VERSION)
     new_wizard.menu_language()
     new_wizard.intro()
     new_wizard.main_menu()
