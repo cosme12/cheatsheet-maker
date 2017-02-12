@@ -181,6 +181,26 @@ class HtmlSheet(object):
         self.update_html_file(html, "<!-- css -->")
 
     
+    def build_columns(self, columns_number):
+        """Creates main_columns html
+
+        Args:
+            columns_number (int): Main columns for the html file (1,2 or 3 only allowed).
+
+        """
+        self.columns_number = columns_number
+        if self.columns_number == 1:
+            html = """<td class="column_1" width="100%" valign="top"> <!-- column1 --> </td>"""
+        elif self.columns_number == 2:
+            html = """<td class="column_1" width="50%" valign="top"> <!-- column1 --> </td><td class="column_space" width="2%"></td>
+            <td class="column_2" width="50%" valign="top"> <!-- column2 --> </td>"""
+        elif self.columns_number == 3:
+            html = """<td class="column_1" width="32%" valign="top"> <!-- column1 --> </td><td class="column_space" width="2%"></td>
+            <td class="column_2" width="32%" valign="top"> <!-- column2 --> </td><td class="column_space" width="2%"></td>
+            <td class="column_2" width="32%" valign="top"> <!-- column3 --> </td><td class="column_space" width="2%"></td>"""
+        self.update_html_file(html, "<!-- columns -->")
+
+
     def build_header(self, author_name):
         """Creates html header.
 
@@ -232,29 +252,7 @@ class HtmlSheet(object):
                 </div>""".format(self.author_picture, self.author_name, self.author_web, self.date, self.sponsor_name, self.sponsor_web)
         self.update_html_file(html, "<!-- footer -->")  
 
-
-    def build_columns(self, columns_number):
-        """Creates main_columns html
-
-        Args:
-            columns_number (int): Main columns for the html file (1,2 or 3 only allowed).
-
-        """
-        self.columns_number = columns_number
-        if self.columns_number == 1:
-            html = """<td class="column_1" width="100%" valign="top"> <!-- column1 --> </td>"""
-        elif self.columns_number == 2:
-            html = """<td class="column_1" width="50%" valign="top"> <!-- column1 --> </td><td class="column_space" width="2%"></td>
-            <td class="column_2" width="50%" valign="top"> <!-- column2 --> </td>"""
-        elif self.columns_number == 3:
-            html = """<td class="column_1" width="32%" valign="top"> <!-- column1 --> </td><td class="column_space" width="2%"></td>
-            <td class="column_2" width="32%" valign="top"> <!-- column2 --> </td><td class="column_space" width="2%"></td>
-            <td class="column_2" width="32%" valign="top"> <!-- column3 --> </td><td class="column_space" width="2%"></td>"""
-        else:
-            #error
-            pass                        
-        self.update_html_file(html, "<!-- columns -->")
-
+    
     
     def build_rows_block(self, selected_column, title, rows_number, text):
         """Creates a html rows block.
