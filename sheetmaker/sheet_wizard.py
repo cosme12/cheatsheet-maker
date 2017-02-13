@@ -2,12 +2,20 @@
 
 Todo:
     * Add color text in command line
-    * Add translation to options
+    * 
 """
 
 import datetime
-from html_builder import HtmlSheet
-import language_strings
+#Fix PATH tests and main program
+try: #Path when running tests
+    import sys
+    import os
+    sys.path.insert(0, os.path.abspath('..'))
+    from sheetmaker import html_builder
+    from sheetmaker import language_strings
+except: #Path when running sheetmaker.py
+    import html_builder
+    import language_strings
 
 
 
@@ -57,7 +65,7 @@ class SheetWizard(object):
         """Displays language selector"""
         print("Choose your language:")
         options = { 1: "English",
-                    2: "Español (NOT CODED YET)",
+                    2: "Español",
                   }
         answer = self.input_handler(options)
         if answer == "1":
@@ -65,7 +73,7 @@ class SheetWizard(object):
         elif answer == "2":
             self.lang_strings = language_strings.espanol
         else:
-            self.menu_language()
+            return(self.menu_language())
 
 
     def intro(self):
@@ -73,7 +81,7 @@ class SheetWizard(object):
         print("##################################################################")
         print("#                                                                #")
         print("#                                                                #")
-        print("#                 {0} {1}                #".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
+        print("#                 {0} {1}              #".format(self.lang_strings["INTRO_MESSAGE"] ,self.version))
         print("#                                                                #")
         print("#                                                                #")
         print("##################################################################")
@@ -81,10 +89,10 @@ class SheetWizard(object):
     def main_menu(self):
         """Displays and handles all menu options"""
         print(self.lang_strings["MENU_MESSAGE"])
-        options = { 1: "Create sheet",
-                    2: "Export (NOT CODED YET)",
-                    3: "Help (NOT CODED YET)",
-                    4: "Exit",
+        options = { 1: self.lang_strings["MAIN_MENU_OPTIONS"][1],
+                    2: self.lang_strings["MAIN_MENU_OPTIONS"][2],
+                    3: self.lang_strings["MAIN_MENU_OPTIONS"][3],
+                    4: self.lang_strings["MAIN_MENU_OPTIONS"][4],
                   }
         answer = self.input_handler(options)
         if answer == "1":
@@ -97,7 +105,7 @@ class SheetWizard(object):
             self.end()
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.main_menu()
+            return(self.main_menu())
 
 
     def config_sheet(self):
@@ -107,13 +115,13 @@ class SheetWizard(object):
         """
         print("##################################################################")
         print(self.lang_strings["CONFIG_SHEET_MESSAGE1"])
-        options = { 1: "What is your sheet title? ('CheatSheet' is added automatically)"
+        options = { 1: self.lang_strings["CONFIG_SHEET_OPTIONS1"][1],
                   }
         self.title = self.input_handler(options)
         print(self.lang_strings["CONFIG_SHEET_MESSAGE2"])
-        options = { 1: "1 main column",
-                    2: "2 main columns",
-                    3: "3 main columns"
+        options = { 1: self.lang_strings["CONFIG_SHEET_OPTIONS2"][1],
+                    2: self.lang_strings["CONFIG_SHEET_OPTIONS2"][2],
+                    3: self.lang_strings["CONFIG_SHEET_OPTIONS2"][3],
                   }
         columns = self.input_handler(options)
         if columns in ("1","2","3"):
@@ -122,20 +130,27 @@ class SheetWizard(object):
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             self.config_sheet()
         print(self.lang_strings["CONFIG_SHEET_MESSAGE3"])
-        options = { 1: "Orange",
-                    2: "Black and white"
+        options = { 1: self.lang_strings["CONFIG_SHEET_OPTIONS3"][1],
+                    2: self.lang_strings["CONFIG_SHEET_OPTIONS3"][2],
+                    3: self.lang_strings["CONFIG_SHEET_OPTIONS3"][3],
+                    4: self.lang_strings["CONFIG_SHEET_OPTIONS3"][4],
+                    5: self.lang_strings["CONFIG_SHEET_OPTIONS3"][5],
+                    6: self.lang_strings["CONFIG_SHEET_OPTIONS3"][6],
                   }
         color = self.input_handler(options)
-        if color in ("1", "2"):
+        if color in ("1", "2", "3", "4", "5", "6"):
             color = int(color)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.config_sheet()
+            return(self.config_sheet())
 
-        self.NewSheet = HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
-        self.NewSheet.create_empty_sheet()
-        self.NewSheet.set_style(color)
-        self.NewSheet.build_columns(self.columns)
+        self.NewSheet = html_builder.HtmlSheet(self.title, datetime.date.today()) #Creates a HtmlSheet object with title attrib
+        new_html = self.NewSheet.create_empty_sheet()
+        self.NewSheet.update_html_file(new_html)
+        new_html = self.NewSheet.set_style(color)
+        self.NewSheet.update_html_file(new_html)
+        new_html = self.NewSheet.build_columns(self.columns)
+        self.NewSheet.update_html_file(new_html)
         self.add_header()
 
 
@@ -143,10 +158,11 @@ class SheetWizard(object):
         """Displays header options selector"""
         print("##################################################################")
         print(self.lang_strings["HEADER_MESSAGE"])
-        options = { 1: "What is the author name?"
+        options = { 1: self.lang_strings["HEADER_OPTIONS"][1],
                   }
         author_name = self.input_handler(options)
-        self.NewSheet.build_header(author_name)
+        new_html = self.NewSheet.build_header(author_name)
+        self.NewSheet.update_html_file(new_html)
         self.add_footer()
 
 
@@ -154,19 +170,20 @@ class SheetWizard(object):
         """Displays footer options selector"""
         print("##################################################################")
         print(self.lang_strings["FOOTER_MESSAGE"])
-        options = { 1: "What is the author picture url?"
+        options = { 1: self.lang_strings["FOOTER_OPTIONS1"][1],
                   }
         author_picture = self.input_handler(options)
-        options = { 1: "What is the author website url? (use http://)"
+        options = { 1: self.lang_strings["FOOTER_OPTIONS2"][1],
                   }
         author_web = self.input_handler(options)
-        options = { 1: "What is the sponsor name?"
+        options = { 1: self.lang_strings["FOOTER_OPTIONS3"][1],
                   }
         sponsor_name = self.input_handler(options)
-        options = { 1: "What is the sponsor webite url? (use http://)"
+        options = { 1: self.lang_strings["FOOTER_OPTIONS4"][1],
                   }
         sponsor_web = self.input_handler(options)
-        self.NewSheet.build_footer(author_picture, author_web, sponsor_name, sponsor_web)
+        new_html = self.NewSheet.build_footer(author_picture, author_web, sponsor_name, sponsor_web)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
     
 
@@ -174,9 +191,9 @@ class SheetWizard(object):
         """Displays block options selector"""
         print("##################################################################")
         print(self.lang_strings["BLOCK_MESSAGE"])
-        options = { 1: "Create text block",
-                    2: "Create block with rows",
-                    0: "Done"
+        options = { 1: self.lang_strings["BLOCK_OPTIONS"][1],
+                    2: self.lang_strings["BLOCK_OPTIONS"][2],
+                    0: self.lang_strings["BLOCK_OPTIONS"][0],
                    }
         answer = self.input_handler(options)
         if answer == "1":
@@ -187,7 +204,7 @@ class SheetWizard(object):
             self.end()
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.add_block()
+            return(self.add_block())
 
 
     def block_rows(self):
@@ -203,22 +220,26 @@ class SheetWizard(object):
             column_selected = int(column_selected)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.block_rows()
-        options = { 1: "What is the title of the block?"
+            return(self.block_rows())
+        options = { 1: self.lang_strings["BLOCK_ROWS_OPTIONS1"][1],
                   }
         title = self.input_handler(options)
-        options = { 1: "How many rows does it have?"
+        options = { 1: self.lang_strings["BLOCK_ROWS_OPTIONS2"][1],
                   }
         try:
             rows_number = int(self.input_handler(options))  #Check if input is an int
         except:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
-            self.block_rows()
-        options = { 1: "What is the text of each row? (text row1. # text row2. # text row3)"
+            return(self.block_rows())
+        options = { 1: self.lang_strings["BLOCK_ROWS_OPTIONS3"][1],
                   }
         text = self.input_handler(options)
+        if text.count("#") < rows_number - 1: #Deny lower rows text divisor
+            print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+            return(self.block_rows())
         text = text.split("#")
-        self.NewSheet.build_rows_block(column_selected, title, rows_number, text)
+        new_html = self.NewSheet.build_rows_block(column_selected, title, rows_number, text)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
 
 
@@ -229,20 +250,21 @@ class SheetWizard(object):
         print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
         options = {}
         for i in range(self.columns):
-            options[i+1] = str(i+1) + " main column"        
+            options[i+1] = "{0} {1}".format(str(i+1), self.lang_strings["TEXT_BLOCK_EXTRA"])
         column_selected = self.input_handler(options)
         if column_selected in ("1", "2", "3"):
             column_selected = int(column_selected)
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             self.block_text()
-        options = { 1: "What is the title of the block?"
+        options = { 1: self.lang_strings["TEXT_BLOCK_OPTIONS1"][1],
                   }
         title = self.input_handler(options)
-        options = { 1: "What is the text for the block (use <br> for new line or any html tag for formatting)"
+        options = { 1: self.lang_strings["TEXT_BLOCK_OPTIONS2"][1],
                   }
         text = self.input_handler(options)
-        self.NewSheet.build_text_block(column_selected, title, text)
+        new_html = self.NewSheet.build_text_block(column_selected, title, text)
+        self.NewSheet.update_html_file(new_html)
         self.add_block()
 
     

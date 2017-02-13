@@ -1,9 +1,10 @@
 CheatSheet Maker
 ================
+[![Build Status](https://travis-ci.org/cosme12/cheatsheet-maker.svg?branch=master)](https://travis-ci.org/cosme12/cheatsheet-maker) [![Coverage Status](https://coveralls.io/repos/github/cosme12/cheatsheet-maker/badge.svg?branch=master)](https://coveralls.io/github/cosme12/cheatsheet-maker?branch=master)
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
 
-Work in progress. Just learning how to code, don't expect much from this project. Help is always welcomed.
+Work in progress. Just learning how to code properly in Python, and how to deal with a project . Help is always welcomed.
 
 
 Features
@@ -11,7 +12,7 @@ Features
 
 - Html generator
 - Export to pdf (WIP)
-- Previewer
+- Previewer (WIP)
 
 
 Examples
@@ -19,7 +20,6 @@ Examples
 
 Check [/sheetmaker/example](/sheetmaker/example) for an example of what you can do with CheatSheet Maker.
 
-relative
 
 ![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
@@ -27,7 +27,8 @@ relative
 Installation
 ------------
 
-No installation is required. Just run `sheetmaker.py`
+- No installation is required. Just run `sheetmaker.py`
+- You can download the last Windows .exe file here: [Windows release](https://github.com/cosme12/cheatsheet-maker/releases)
 
 
 Contribute
