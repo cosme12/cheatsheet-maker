@@ -78,19 +78,6 @@ class HtmlBuilderTestCase(unittest.TestCase):
         self.assertEqual(test_html[1], "<!-- column2 -->")
 
 
-    def tearDown(self):
-        """Removes  extra files generated during tests
-
-        Args:
-            file_name (str): File to be removed.
-        """
-        try:
-            #os.remove(self.test_file_name + ".html")
-            pass
-        except OSError as oserr:
-            print(oserr)
-
-
 
 if __name__ == '__main__':
     unittest.main()

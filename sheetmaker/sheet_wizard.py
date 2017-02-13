@@ -6,8 +6,16 @@ Todo:
 """
 
 import datetime
-import html_builder
-import language_strings
+#Fix PATH tests and main program
+try: #Path when running tests
+    import sys
+    import os
+    sys.path.insert(0, os.path.abspath('..'))
+    from sheetmaker import html_builder
+    from sheetmaker import language_strings
+except: #Path when running sheetmaker.py
+    import html_builder
+    import language_strings
 
 
 
