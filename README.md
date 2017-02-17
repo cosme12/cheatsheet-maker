@@ -6,11 +6,18 @@ Cheatsheet (or quick reference) generator. Use it to create guides, instructions
 
 Work in progress. Just learning how to code properly in Python, and how to deal with a project . Help is always welcomed.
 
+Requirements
+------------
+- Python 3
+- Fire `sudo apt-get install python3` command in terminal to install Python3 (Ubuntu)
+
 
 Features
 --------
 
 - Html generator
+- Multi Language Supported
+- Added Help
 - Export to pdf (WIP)
 - Previewer (WIP)
 
@@ -24,10 +31,10 @@ Check [/sheetmaker/example](/sheetmaker/example) for an example of what you can 
 ![alt tag](https://raw.githubusercontent.com/cosme12/cheatsheet-maker/develop/sheetmaker/example/example.png)
 
 
-Installation
+How to use
 ------------
 
-- No installation is required. Just run `sheetmaker.py`
+- Type `python sheetmaker.py` in the terminal 
 - You can download the last Windows .exe file here: [Windows release](https://github.com/cosme12/cheatsheet-maker/releases)
 
 
@@ -41,7 +48,7 @@ Contribute
 Support
 -------
 
-If you are having issues, please let me know.
+Contact us for issue
 
 
 License
