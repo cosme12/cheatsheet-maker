@@ -69,7 +69,7 @@ espanol = {
     "INTRO_MESSAGE": "Bienvenido a CheatSheet Maker",
     "MAIN_MENU_OPTIONS": {1: "Crear hoja",
                           2: "Exportar (NOT CODED YET)",
-                          3: "Ayuda (NOT CODED YET)",
+                          3: "Ayuda",
                           4: "Salir",
                           },
     "MENU_MESSAGE": "Escribe el numero para elegir tu opcion",

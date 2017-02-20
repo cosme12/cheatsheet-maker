@@ -67,9 +67,11 @@ class SheetWizard(object):
                    }
         answer = self.input_handler(options)
         if answer == "1":
-            self.lang_strings = language_strings.english
+            self.lang_strings = language_strings.english            
+            self.help_string = cheatsheet_help.english
         elif answer == "2":
             self.lang_strings = language_strings.espanol
+            self.help_string = cheatsheet_help.espanol
         else:
             return(self.menu_language())
 
@@ -268,7 +270,6 @@ class SheetWizard(object):
 
     def help(self):
         """Displays and handle all help features"""
-        self.help_string = cheatsheet_help.english_help
         print("##################################################################")
         print("#                                                                #")
         print("#                        CHEATSHEET HELP                         #")
