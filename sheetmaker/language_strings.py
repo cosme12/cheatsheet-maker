@@ -85,7 +85,7 @@ espanol = {
                           4: "Salir",
                           },
     "MENU_MESSAGE": "Escribe el numero para elegir tu opcion",
-    "CONFIG_SHEET_MESSAGE1": "Cosntruyendo la estructura basica... responde las siguientes preguntas.",
+    "CONFIG_SHEET_MESSAGE1": "Construyendo la estructura basica... responde las siguientes preguntas.",
     "CONFIG_SHEET_MESSAGE2": "Cuantas columnas tiene tu hoja?",
     "CONFIG_SHEET_MESSAGE3": "Que color de estilo prefieres?",
     "CONFIG_SHEET_OPTIONS1": {1: "Cual es el titulo de tu hoja? ('CheatSheet' se agrega automaticamente)"
@@ -101,10 +101,10 @@ espanol = {
                               5: "Verde",
                               6: "Azul",
                               },
-    "HEADER_MESSAGE": "Cosntruyendo el encabezado... contesta las siguientes preguntas.",
+    "HEADER_MESSAGE": "Construyendo el encabezado... responde las siguientes preguntas.",
     "HEADER_OPTIONS": {1: "Cual es el nombre del autor?"
                        },
-    "FOOTER_MESSAGE": "Construyendo el pie de pagina... contesta las siguientes preguntas.",
+    "FOOTER_MESSAGE": "Construyendo el pie de pagina... responde las siguientes preguntas.",
     "FOOTER_OPTIONS1": {1: "Cual es la url de la imagen del autor?"
                         },
     "FOOTER_OPTIONS2": {1: "Cual es la url del sitio web del autor? (use http://)"
@@ -113,12 +113,12 @@ espanol = {
                         },
     "FOOTER_OPTIONS4": {1: "Cual es la url del sitio web del sponsor? (use http://)"
                         },
-    "BLOCK_MESSAGE": "Construyendo los bloques... contesta las siguientes preguntas.",
+    "BLOCK_MESSAGE": "Construyendo los bloques... responde las siguientes preguntas.",
     "BLOCK_OPTIONS": {1: "Crear bloque de texto",
                       2: "Crear bloque con filas",
                       3: "Volver al menu principal"
                       },
-    "BLOCK_ROWS_MESSAGE1": "Construyendo bloque con filas... contesta las siguientes preguntas.",
+    "BLOCK_ROWS_MESSAGE1": "Construyendo bloque con filas... responde las siguientes preguntas.",
     "BLOCK_ROWS_MESSAGE2": "En que columna principal quieres construilo?",
     "BLOCK_ROWS_OPTIONS1": {1: "Cual es el titulo del bloque?"
                             },
@@ -126,7 +126,7 @@ espanol = {
                             },
     "BLOCK_ROWS_OPTIONS3": {1: "Cual es el texto de cada fila? (texto fila1. # texto fila2. # texto fila3.)"
                             },
-    "TEXT_BLOCK_MESSAGE": "Construyendo bloque de texto... contesta las siguientes preguntas.",
+    "TEXT_BLOCK_MESSAGE": "Construyendo bloque de texto... responde las siguientes preguntas.",
     "TEXT_BLOCK_EXTRA": "columna principal",
     "TEXT_BLOCK_OPTIONS1": {1: "Cual es el titulo del bloque?"
                             },
