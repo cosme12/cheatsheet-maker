@@ -14,10 +14,12 @@ try: #Path when running tests
     from sheetmaker import html_builder
     from sheetmaker import language_strings
     from sheetmaker import cheatsheet_help
+    from sheetmaker import exporter
 except: #Path when running sheetmaker.py
     import html_builder
     import language_strings
     import cheatsheet_help
+    import exporter
 
 
 class SheetWizard(object):
@@ -37,8 +39,8 @@ class SheetWizard(object):
         Attrib:
             version (str): Script version.
             lang_strings (dict): Contains all message strings.
-            self.title (str): Html file name.
-            self.columns (int): Number of main columns.
+            title (str): Html file name.
+            columns (int): Number of main columns.
             NewSheet (obj): HtmlSheet object instance.
 
         """
@@ -188,15 +190,15 @@ class SheetWizard(object):
         print(self.lang_strings["BLOCK_MESSAGE"])
         options = {1: self.lang_strings["BLOCK_OPTIONS"][1],
                    2: self.lang_strings["BLOCK_OPTIONS"][2],
-                   0: self.lang_strings["BLOCK_OPTIONS"][0],
+                   3: self.lang_strings["BLOCK_OPTIONS"][3],
                    }
         answer = self.input_handler(options)
         if answer == "1":
             self.block_text()
         elif answer == "2":
             self.block_rows()
-        elif answer == "0":
-            self.end()
+        elif answer == "3":
+            self.main_menu()
         else:
             print(self.lang_strings["INVALID_INPUT_MESSAGE"])
             return(self.add_block())
@@ -264,10 +266,6 @@ class SheetWizard(object):
         """Displays preview message"""
         pass
 
-    def export(self):
-        """Displays export options selector"""
-        pass
-
     def help(self):
         """Displays and handle all help features"""
         print("##################################################################")
@@ -308,6 +306,64 @@ class SheetWizard(object):
         print("##################################################################")
         self.intro()
         self.main_menu()
+
+    def export(self):
+        """Displays export options selector"""
+        print("##################################################################")
+        print(self.lang_strings["EXPORT_MESSAGE"])
+        options = {1: self.lang_strings["EXPORT_OPTIONS"][1],
+                   2: self.lang_strings["EXPORT_OPTIONS"][2],
+                   3: self.lang_strings["EXPORT_OPTIONS"][3],
+                   4: self.lang_strings["EXPORT_OPTIONS"][4],
+                   }
+        answer = self.input_handler(options)
+        if answer == "1":
+            self.export_to_pdf()
+        elif answer == "2":
+            self.export_to_png()
+        elif answer == "3":
+            self.export_config()
+        elif answer == "4":
+            self.main_menu()
+        else:
+            print(self.lang_strings["INVALID_INPUT_MESSAGE"])
+            return(self.add_block())
+
+    def export_to_pdf(self):
+        """"""
+        print("##################################################################")
+        options = {1: self.lang_strings["EXPORT_PDF"][1],
+                   }
+        file_name = self.input_handler(options)
+        try:            
+            pdf = exporter.Export()
+            pdf.to_pdf(file_name)
+        except:
+            print(self.lang_strings["EXPORT_ERROR"])        
+        self.main_menu()
+
+    def export_to_png(self):
+        """"""
+        print("##################################################################")
+        options = {1: self.lang_strings["EXPORT_PDF"][1],
+                   }
+        file_name = self.input_handler(options)
+        try:            
+            png = exporter.Export()
+            png.to_png(file_name)
+        except:
+            print(self.lang_strings["EXPORT_ERROR"])
+        self.main_menu()
+
+    def export_config(self):
+        print("##################################################################")
+        print(self.lang_strings["EXPORT_CONFIG"])
+        options = {1: self.lang_strings["EXPORT_CONFIG_OPTIONS"][1],
+                   }
+        path = self.input_handler(options)
+        pdf = exporter.Export()
+        pdf.config_save(path)
+        self.export()
 
     def end(self):
         """Displays end message and close system"""

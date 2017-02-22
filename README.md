@@ -36,6 +36,7 @@ How to use
 
 - Type `python sheetmaker.py` in the terminal 
 - You can download the last Windows .exe file here: [Windows release](https://github.com/cosme12/cheatsheet-maker/releases)
+- In order to use the exporter feature, you must donwload 'wkhtmltopdf' from here: [wkhtmltopdf](http://wkhtmltopdf.org/downloads.html) After that sheetmaker will ask you to input the installation path.
 
 
 Contribute
