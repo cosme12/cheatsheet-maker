@@ -45,7 +45,7 @@ class HtmlSheet(object):
         self.author_name = author_name    
 
     def create_empty_sheet(self):
-        """Create a basic html file and a files folder that will be used to make the sheet."""
+        """Create a basic html file that will be used to make the sheet."""
         html = constants.EMPTY_SHEET.format(self.title)
         return(html, None)
 
@@ -75,7 +75,7 @@ class HtmlSheet(object):
         return(html, "<!-- css -->")
     
     def build_columns(self, columns_number):
-        """Creates main_columns html
+        """Create html main_columns.
 
         Args:
             columns_number (int): Main columns for the html file (1,2 or 3 only allowed).
@@ -149,7 +149,7 @@ class HtmlSheet(object):
         return(html, "<!-- column" + str(selected_column) + " -->")
 
     def update_html_file(self, html_to_add):
-        """Reads html file, appends new html and writes it to file
+        """Reads html file, appends new html and writes it to file.
 
         Args:
             html_to_add (tuple): Text to write in file and Text string to continue writting from there.

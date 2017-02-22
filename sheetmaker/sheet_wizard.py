@@ -62,7 +62,7 @@ class SheetWizard(object):
         return(input(input_text))
 
     def menu_language(self):
-        """Displays language selector"""
+        """Displays language selector."""
         print("Choose your language:")
         options = {1: "English",
                    2: "Español",
@@ -78,7 +78,7 @@ class SheetWizard(object):
             return(self.menu_language())
 
     def intro(self):
-        """Displays text intro to SheetWizard"""
+        """Displays text intro to SheetWizard."""
         print("##################################################################")
         print("#                                                                #")
         print("#                                                                #")
@@ -88,7 +88,7 @@ class SheetWizard(object):
         print("##################################################################")
 
     def main_menu(self):
-        """Displays and handles all menu options"""
+        """Displays and handles all menu options."""
         print(self.lang_strings["MENU_MESSAGE"])
         options = {1: self.lang_strings["MAIN_MENU_OPTIONS"][1],
                    2: self.lang_strings["MAIN_MENU_OPTIONS"][2],
@@ -154,7 +154,7 @@ class SheetWizard(object):
         self.add_header()
 
     def add_header(self):
-        """Displays header options selector"""
+        """Displays header options selector."""
         print("##################################################################")
         print(self.lang_strings["HEADER_MESSAGE"])
         options = {1: self.lang_strings["HEADER_OPTIONS"][1],
@@ -165,7 +165,7 @@ class SheetWizard(object):
         self.add_footer()
 
     def add_footer(self):
-        """Displays footer options selector"""
+        """Displays footer options selector."""
         print("##################################################################")
         print(self.lang_strings["FOOTER_MESSAGE"])
         options = {1: self.lang_strings["FOOTER_OPTIONS1"][1],
@@ -185,7 +185,7 @@ class SheetWizard(object):
         self.add_block()
 
     def add_block(self):
-        """Displays block options selector"""
+        """Displays block options selector."""
         print("##################################################################")
         print(self.lang_strings["BLOCK_MESSAGE"])
         options = {1: self.lang_strings["BLOCK_OPTIONS"][1],
@@ -204,7 +204,7 @@ class SheetWizard(object):
             return(self.add_block())
 
     def block_rows(self):
-        """Rows block options selector"""
+        """Rows block options selector."""
         print("##################################################################")
         print(self.lang_strings["BLOCK_ROWS_MESSAGE1"])
         print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
@@ -239,7 +239,7 @@ class SheetWizard(object):
         self.add_block()
 
     def block_text(self):
-        """Text block options selector"""
+        """Text block options selector."""
         print("##################################################################")
         print(self.lang_strings["TEXT_BLOCK_MESSAGE"])
         print(self.lang_strings["BLOCK_ROWS_MESSAGE2"])
@@ -263,11 +263,11 @@ class SheetWizard(object):
         self.add_block()
 
     def preview():
-        """Displays preview message"""
+        """Displays preview message."""
         pass
 
     def help(self):
-        """Displays and handle all help features"""
+        """Displays and handle all help features."""
         print("##################################################################")
         print("#                                                                #")
         print("#                        CHEATSHEET HELP                         #")
@@ -308,7 +308,7 @@ class SheetWizard(object):
         self.main_menu()
 
     def export(self):
-        """Displays export options selector"""
+        """Displays export options selector."""
         print("##################################################################")
         print(self.lang_strings["EXPORT_MESSAGE"])
         options = {1: self.lang_strings["EXPORT_OPTIONS"][1],
@@ -330,7 +330,7 @@ class SheetWizard(object):
             return(self.add_block())
 
     def export_to_pdf(self):
-        """"""
+        """Handle .pdf export."""
         print("##################################################################")
         options = {1: self.lang_strings["EXPORT_PDF"][1],
                    }
@@ -343,7 +343,7 @@ class SheetWizard(object):
         self.main_menu()
 
     def export_to_png(self):
-        """"""
+        """Handle .png export."""
         print("##################################################################")
         options = {1: self.lang_strings["EXPORT_PDF"][1],
                    }
@@ -356,6 +356,7 @@ class SheetWizard(object):
         self.main_menu()
 
     def export_config(self):
+        """Exporter configuration option selector."""
         print("##################################################################")
         print(self.lang_strings["EXPORT_CONFIG"])
         options = {1: self.lang_strings["EXPORT_CONFIG_OPTIONS"][1],
@@ -366,7 +367,7 @@ class SheetWizard(object):
         self.export()
 
     def end(self):
-        """Displays end message and close system"""
+        """Displays end message and close system."""
         print("##################################################################")
         print(self.lang_strings["END_MESSAGE"])
         input(self.lang_strings["EXIT_MESSAGE"])

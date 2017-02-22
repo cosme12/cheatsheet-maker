@@ -1,4 +1,4 @@
-"""Export the html sheet to pdf, png or jpeg.
+"""Export the html sheet to pdf or png.
 
 Todo:
     * Add png export
