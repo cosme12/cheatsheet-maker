@@ -42,14 +42,12 @@ class HtmlSheet(object):
         """
         self.title = title
         self.date = date
-        self.author_name = author_name
-    
+        self.author_name = author_name    
 
     def create_empty_sheet(self):
         """Create a basic html file and a files folder that will be used to make the sheet."""
         html = constants.EMPTY_SHEET.format(self.title)
         return(html, None)
-
 
     def set_style(self, color_number):
         """Select the color style, the number of rows and adjust css style that will be used for the html.
@@ -75,7 +73,6 @@ class HtmlSheet(object):
                           }
         html = constants.COLOR_STYLE.format(color_main[self.color], color_secundary[self.color])        
         return(html, "<!-- css -->")
-
     
     def build_columns(self, columns_number):
         """Creates main_columns html
@@ -93,7 +90,6 @@ class HtmlSheet(object):
             html = constants.COLUMNS3
         return(html, "<!-- columns -->")
 
-
     def build_header(self, author_name):
         """Creates html header.
 
@@ -104,7 +100,6 @@ class HtmlSheet(object):
         self.author_name = author_name
         html = constants.HEADER.format(self.title, self.author_name)
         return(html, "<!-- header -->")
-
 
     def build_footer(self, author_picture, author_web, sponsor_name, sponsor_web):
         """Creates html footer.
@@ -120,9 +115,7 @@ class HtmlSheet(object):
         self.sponsor_name = sponsor_name
         self.sponsor_web = sponsor_web
         html = constants.FOOTER.format(self.author_picture, self.author_name, self.author_web, self.date, self.sponsor_name, self.sponsor_web)
-        return(html, "<!-- footer -->")  
-
-    
+        return(html, "<!-- footer -->")    
     
     def build_rows_block(self, selected_column, title, rows_number, text):
         """Creates a html rows block.
@@ -143,7 +136,6 @@ class HtmlSheet(object):
         html = constants.ROWS_BLOCK.format(title, rows)
         return(html, "<!-- column" + str(selected_column) + " -->")
 
-
     def build_text_block(self, selected_column, title, text):
         """Creates a html text block.
 
@@ -155,7 +147,6 @@ class HtmlSheet(object):
         """
         html = constants.TEXT_BLOCK.format(title, text)
         return(html, "<!-- column" + str(selected_column) + " -->")
-
 
     def update_html_file(self, html_to_add):
         """Reads html file, appends new html and writes it to file
@@ -175,4 +166,3 @@ class HtmlSheet(object):
             html = new_html
         with open(self.title + ".html", 'w') as sheet:
             sheet.write(html)
-

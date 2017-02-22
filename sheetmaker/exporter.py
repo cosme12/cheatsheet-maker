@@ -9,18 +9,18 @@ import pdfkit
 
 class Export(object):
     """docstring for Export"""
+    
+
     def __init__(self):
         """docstring"""
         path = self.config_read()
         self.path_wkhtmltopdf = r"{0}bin\wkhtmltopdf.exe".format(path)
         self.path_wkhtmltoimage = r"{0}bin\wkhtmltoimage.exe".format(path)
 
-
     def to_pdf(self, file_name):
         """Exports html sheet to pdf"""
         config = pdfkit.configuration(wkhtmltopdf=self.path_wkhtmltopdf)
         pdfkit.from_file("{0}.html".format(file_name), "{0}.pdf".format(file_name), configuration=config)
-
 
     def to_png(self, file_name):
         """Exports html sheet to png"""
