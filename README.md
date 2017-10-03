@@ -1,6 +1,6 @@
 CheatSheet Maker
 ================
-[![Build Status](https://travis-ci.org/cosme12/cheatsheet-maker.svg?branch=master)](https://travis-ci.org/cosme12/cheatsheet-maker) [![Coverage Status](https://coveralls.io/repos/github/cosme12/cheatsheet-maker/badge.svg?branch=master)](https://coveralls.io/github/cosme12/cheatsheet-maker?branch=master)
+[![Build Status](https://travis-ci.org/cosme12/cheatsheet-maker.svg?branch=master)](https://travis-ci.org/cosme12/cheatsheet-maker) [![Coverage Status](https://coveralls.io/repos/github/cosme12/cheatsheet-maker/badge.svg?branch=master)](https://coveralls.io/github/cosme12/cheatsheet-maker?branch=master) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
 
