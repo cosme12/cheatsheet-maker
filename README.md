@@ -1,5 +1,9 @@
 CheatSheet Maker
 ================
+
+
+<a href="https://www.buymeacoffee.com/cosme12" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 [![Build Status](https://travis-ci.org/cosme12/cheatsheet-maker.svg?branch=master)](https://travis-ci.org/cosme12/cheatsheet-maker) [![Coverage Status](https://coveralls.io/repos/github/cosme12/cheatsheet-maker/badge.svg?branch=master)](https://coveralls.io/github/cosme12/cheatsheet-maker?branch=master) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Cheatsheet (or quick reference) generator. Use it to create guides, instructions or study. Made in Python 3.
